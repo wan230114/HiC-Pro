@@ -1,9 +1,9 @@
 #   conda env create -f environment.yml
 name: HiC-Pro_v3.0.0
 channels:
-  - conda-forge
-  - bioconda
-  - defaults
+ # - conda-forge
+ # - bioconda
+ #- defaults
 dependencies:
   - python=3.7.6
   - scipy=1.4.1

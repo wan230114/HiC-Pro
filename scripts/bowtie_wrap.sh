@@ -45,11 +45,11 @@ end_to_end_align()
     fi
     
     echo "##HiC-Pro mapping" > ${ldir}/${prefix}_bowtie2.log
-    cmd="${BOWTIE2_PATH}/bowtie2 ${BOWTIE2_GLOBAL_OPTIONS} --rg-id BMG --rg SM:${prefix} -p ${bwt_cpu} -x ${BOWTIE2_IDX} -U ${infile} 2>> ${ldir}/${prefix}_bowtie2.log"
+    cmd="echo '###pass-cmd### ${BOWTIE2_PATH}/bowtie2 ${BOWTIE2_GLOBAL_OPTIONS} --rg-id BMG --rg SM:${prefix} -p ${bwt_cpu} -x ${BOWTIE2_IDX} -U ${infile} 2>> ${ldir}/${prefix}_bowtie2.log"
     if [[ $filtunmap == 1 ]]; then
-	cmd=$cmd"| ${SAMTOOLS_PATH}/samtools view -F 4 -bS - > ${odir}/${prefix}_${REFERENCE_GENOME}.bwt2glob.bam"
+	cmd=$cmd"| ${SAMTOOLS_PATH}/samtools view -F 4 -bS - > ${odir}/${prefix}_${REFERENCE_GENOME}.bwt2glob.bam'"
     else
-	cmd=$cmd"> ${odir}/${prefix}_${REFERENCE_GENOME}.bwt2glob.bam"
+	cmd=$cmd"> ${odir}/${prefix}_${REFERENCE_GENOME}.bwt2glob.bam'"
     fi
    
     exec_cmd $cmd 
@@ -75,7 +75,7 @@ cut_and_align()
     ## Starts trimming reads from the ligation site
     tfile=`basename $infile | sed -e s/.fastq$/_trimmed.fastq/`
     ##cmd="${SCRIPTS}/cutsite_trimming --fastq $infile --cutsite ${LIGATION_SITE} --out ${odir}/$tfile --rmuntrim > ${ldir}/${prefix}_readsTrimming.log 2>&1"
-    cmd="${SCRIPTS}/cutsite_trimming --fastq $infile --cutsite ${LIGATION_SITE} --out ${odir}/$tfile  > ${ldir}/${prefix}_readsTrimming.log 2>&1"
+    cmd="echo '###pass-cmd### ${SCRIPTS}/cutsite_trimming --fastq $infile --cutsite ${LIGATION_SITE} --out ${odir}/$tfile  > ${ldir}/${prefix}_readsTrimming.log 2>&1'"
     exec_cmd "$cmd" 
     
     ## Unmapped reads
@@ -93,7 +93,7 @@ cut_and_align()
     ## Run bowtie
     echo "##HiC-Pro mapping" > ${ldir}/${prefix}_bowtie2.log
 
-    cmd="${BOWTIE2_PATH}/bowtie2 ${BOWTIE2_LOCAL_OPTIONS} --rg-id BML --rg SM:${prefix} -p ${bwt_cpu} -x ${BOWTIE2_IDX} -U ${odir}/${tfile} 2>> ${ldir}/${prefix}_bowtie2.log | ${SAMTOOLS_PATH}/samtools view -bS - > ${odir}/${prefix}_bwt2loc.bam"
+    cmd="echo '###pass-cmd### ${BOWTIE2_PATH}/bowtie2 ${BOWTIE2_LOCAL_OPTIONS} --rg-id BML --rg SM:${prefix} -p ${bwt_cpu} -x ${BOWTIE2_IDX} -U ${odir}/${tfile} 2>> ${ldir}/${prefix}_bowtie2.log | ${SAMTOOLS_PATH}/samtools view -bS - > ${odir}/${prefix}_bwt2loc.bam'"
     exec_cmd "$cmd" 
 }
 

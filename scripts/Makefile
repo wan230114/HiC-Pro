@@ -57,8 +57,8 @@ endif
 
 clean:
 	@/bin/rm -rf $(LOGS_DIR)/*
-	@/bin/rm -rf $(BOWTIE2_OUTPUT_DIR)/bwt2_glob  
-	@/bin/rm -rf $(BOWTIE2_OUTPUT_DIR)/bwt2_loc  
+	@echo "passed /bin/rm -rf $(BOWTIE2_OUTPUT_DIR)/bwt2_glob  "
+	@echo "passed /bin/rm -rf $(BOWTIE2_OUTPUT_DIR)/bwt2_loc  "
 
 
 debug: config_check
@@ -127,8 +127,8 @@ mapping_clean: config_check
 	@echo "--------------------------------------------" 
 	@date 
 	@echo "Cleaning mapping files ..."
-	@rm -rf $(BOWTIE2_OUTPUT_DIR)/bwt2_global
-	@rm -rf $(BOWTIE2_OUTPUT_DIR)/bwt2_local
+	@echo "passed rm -rf $(BOWTIE2_OUTPUT_DIR)/bwt2_global"
+	@echo "passed rm -rf $(BOWTIE2_OUTPUT_DIR)/bwt2_local"
 	@echo
 
 ######################################

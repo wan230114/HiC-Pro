@@ -3,9 +3,9 @@
 ## Paths and Settings  - Start editing here !
 #########################################################################
 
-PREFIX = 
-BOWTIE2_PATH = 
-SAMTOOLS_PATH = 
-R_PATH = 
-PYTHON_PATH = 
+PREFIX = /home/chenjun/software/bio_tools/HiC-Pro_3.0.0/
+BOWTIE2_PATH = /home/gzsc/biotools/miniconda3/envs/hic_pro_3.0.0/bin/bowtie2
+SAMTOOLS_PATH = /home/gzsc/biotools/miniconda3/envs/hic_pro_3.0.0/bin/samtools
+R_PATH = /home/gzsc/biotools/miniconda3/envs/hic_pro_3.0.0/bin/R
+PYTHON_PATH = /home/gzsc/biotools/miniconda3/envs/hic_pro_3.0.0/bin/python 
 CLUSTER_SYS = 

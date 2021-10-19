@@ -1,0 +1,1 @@
+/home/chenjun/software/bio_tools/HiC-Pro_3.0.0/bin/utils/digest_genome.py -r A^AGCTT -o /home/chenjun/software/bio_tools/HiC-Pro_3.0.0/annotation/hg38_hindiii.bed /home/public/igenomic_38/Sequence/WholeGenomeFasta/genome.fa

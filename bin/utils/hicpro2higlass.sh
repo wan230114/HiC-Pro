@@ -42,7 +42,7 @@ function trap_exit()
 
     if [[ ! -z ${tmp_dir} && -e ${tmp_dir} ]]; then 
 	echo -e "Cleaning temporary folders ..." >&2
-	/bin/rm -rf ${tmp_dir}
+	echo "passed /bin/rm -rf ${tmp_dir}"
     fi
 }
 

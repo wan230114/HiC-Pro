@@ -302,7 +302,7 @@ if [[ -d $OUTPUT && $MAKE_OPTS == "" ]]; then
     echo "$OUTPUT folder alreads exists. Do you want to overwrite it ? (y/n) [n] : "
     read ans
     if [ XX${ans} = XXy ]; then
-	/bin/rm -rf $OUTPUT
+	echo "passed /bin/rm -rf $OUTPUT"
     elif [ XX${ans} = XXn ]; then
 	exit -1
     fi

@@ -4,6 +4,12 @@ HiC-Pro_2.11.3-beta/
 bowtie2-2.2.4/
 results/
 annotation/hg38_arima.bed
+<<<<<<< HEAD
 annotation/hg38_hindiii.bed
 annotation/hg38.chrom.sizes
 annotation/hg38_dpnii.bed
+=======
+annotation/hg38_dpnii.bed
+annotation/hg38_hindiii.bed
+annotation/hg38.chrom.sizes
+>>>>>>> bfebbab97629b47143dfa84877c5601986fc15af
